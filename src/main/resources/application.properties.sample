@@ -1,0 +1,13 @@
+spring.datasource.url=jdbc:h2:mem:minibank
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=sa
+
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.H2Dialect
+
+server.servlet.context-path=/api/v1
+
+# Change for PROD
+spring.jpa.hibernate.ddl-auto=create-drop
+spring.h2.console.enabled=true
