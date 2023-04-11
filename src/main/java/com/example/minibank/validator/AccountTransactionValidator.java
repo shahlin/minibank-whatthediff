@@ -17,7 +17,13 @@ public class AccountTransactionValidator {
     }
 
     public static void validateTransferAmount(Account account, double amount) {
+        if (amount > account.getBalance()) {
+            throw new AccountTransactionException("Insufficient funds to make the transfer");
+        }
 
+        if (amount < AccountService.MINIMUM_TRANSFER_AMOUNT) {
+            throw new AccountTransactionException("Transfer amount cannot be less than " + AccountService.MINIMUM_TRANSFER_AMOUNT);
+        }
     }
 
 }
